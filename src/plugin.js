@@ -5,7 +5,7 @@ import {version as VERSION} from '../package.json';
 /**
  * Default plugin options
  *
- * @param {String} url
+ * @param {String} path
  *        Sprite location. Must be set by user.
  * @param {Integer} width
  *        Width in pixels of a thumbnail. Must be set by user.
@@ -13,15 +13,12 @@ import {version as VERSION} from '../package.json';
  *        Height in pixels of a thumbnail. Must be set by user.
  * @param {Number} interval
  *        Interval between thumbnail frames in seconds. Default: 1.
- * @param {Integer} responsive
- *        Width of player below which thumbnails are reponsive. Default: 600.
  */
 const defaults = {
-  url: '',
+  path: [],
   width: 0,
   height: 0,
-  interval: 1,
-  responsive: 600
+  interval: 1
 };
 
 /**
