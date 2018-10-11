@@ -15,7 +15,7 @@ IE 9+
 ## 安装
 
 ```bash
-npm install videojs-thumbnails-sprite --save
+npm install videojs-thumbnails-sprite-for-videojs6 --save
 ```
 
 ## 运行
