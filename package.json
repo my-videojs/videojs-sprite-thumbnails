@@ -1,6 +1,6 @@
 {
   "name": "@my-videojs/videojs-sprite-thumbnails",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plugin to display thumbnails from a sprite image when hovering over the progress bar.",
   "main": "dist/videojs-sprite-thumbnails.cjs.js",
   "module": "dist/videojs-sprite-thumbnails.es.js",
@@ -33,6 +33,10 @@
     "watch:js-umd": "rollup -c scripts/umd.rollup.config.js -w",
     "watch:test": "rollup -c scripts/test.rollup.config.js -w",
     "prepublish": "not-in-install && npm run build || in-install"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org/"
   },
   "keywords": [
     "videojs",
