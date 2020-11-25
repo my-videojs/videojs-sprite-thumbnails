@@ -62,11 +62,12 @@ export default function spriteThumbs(player, options) {
       return;
     }
 
-    const currentShot = hoverTime % (interval * shots) // 第几张截屏
-    const row = Math.floor(currentShot % (interval * columns)) / interval;
-    const column = Math.floor(currentShot / (interval * columns));
-    const cLeft = -row * width;
-    const cTop = -column * height;
+    const currentShot = Math.floor(hoverTime / interval); // 计算当前 hover 的时间属于第几张截图
+    const row = Math.floor(currentShot / columns); // 这张截图在第几行
+    const column = Math.floor(currentShot % columns);
+
+    const cTop = -row * height;
+    const cLeft = -column * width;
     const controlsTop = dom.getBoundingClientRect(controls.el_).top;
     const seekBarTop = dom.getBoundingClientRect(seekBar.el_).top;
     // top of seekBar is 0 position
