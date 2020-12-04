@@ -62,7 +62,15 @@ export default function spriteThumbs(player, options) {
       return;
     }
 
-    const currentShot = Math.floor(hoverTime / interval); // 计算当前 hover 的时间属于第几张截图
+    let page = 0
+    if (path.length > 1) {
+      page = Math.floor(hoverTime / interval / shots);
+    }
+
+    // 存在多张图的情况
+    const shotTime = hoverTime - (page * shots)
+
+    const currentShot = Math.floor(shotTime / interval); // 计算当前 hover 的时间属于第几张截图
     const row = Math.floor(currentShot / columns); // 这张截图在第几行
     const column = Math.floor(currentShot % columns);
 
@@ -76,10 +84,7 @@ export default function spriteThumbs(player, options) {
       topOffset -= (seekBarTop - controlsTop);
     }
 
-    let page = 0
-    if (path.length > 1) {
-      page = Math.floor(hoverTime / interval / shots);
-    }
+
 
     tooltipStyle({
       'width': width + 'px',
